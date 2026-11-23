@@ -30,18 +30,21 @@ document.getElementById("total").addEventListener("click", function () {
     let total = english + maths + urdu + computer + biology;
 
     // Calculate Percentage
-    let percentage = (total / 500) * 100;
+    let percentage = (total / 550) * 100;
 
     // Calculate Grade
     let grade;
 
     if (percentage >= 80) {
-        grade = "A";
+        grade = "A+";
     }
     else if (percentage >= 70) {
-        grade = "B";
+        grade = "A";
     }
     else if (percentage >= 60) {
+        grade = "B";
+    }
+    else if (percentage >= 50) {
         grade = "C";
     }
     else {
@@ -55,7 +58,7 @@ document.getElementById("total").addEventListener("click", function () {
     // Check Pass or Fail
     let result;
 
-    if (marks.every(mark => mark >= 40)) {
+    if (marks.every(mark => mark >= 50)) {
         result = "Pass";
     }
     else {
@@ -64,13 +67,6 @@ document.getElementById("total").addEventListener("click", function () {
 
     // Display Result
     alert(
-        "Student Result\n\n" +
-        "Student Name: " + student + "\n" +
-        "English: " + english + "\n" +
-        "Maths: " + maths + "\n" +
-        "Urdu: " + urdu + "\n" +
-        "Computer: " + computer + "\n" +
-        "Biology: " + biology + "\n\n" +
         "Total Marks: " + total + " / 500\n" +
         "Percentage: " + percentage.toFixed(2) + "%\n" +
         "Grade: " + grade + "\n" +
